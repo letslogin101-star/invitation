@@ -253,12 +253,12 @@
                     <h3>${index + 1}. ${trimmedName}</h3>
                     
                     <strong>Personal URL:</strong>
-                    <div class="url-display">${personalUrl}</div>
-                    <button class="copy-btn" onclick="copyToClipboard('${personalUrl.replace(/'/g, "\\'")}')">Copy URL</button>
+                    <div id="url-display">${personalUrl}</div>
+                    <button class="copy-btn" onclick="copyToClipboard('url-display')">Copy URL</button>
                     
                     <strong style="display: block; margin-top: 15px;">WhatsApp Message:</strong>
-                    <div class="whatsapp-msg">${message}</div>
-                    <button class="copy-btn" onclick="copyToClipboard(\`${message.replace(/`/g, '\\`')}\`)">Copy Message</button>
+                    <div id="whatsapp-msg">${message}</div>
+                    <button class="copy-btn" onclick="copyToClipboard('whatsapp-msg')">Copy Message</button>
                     <a href="${whatsappUrl}" target="_blank" style="display: inline-block; margin-left: 10px;">
                         <button class="copy-btn" style="background: #25D366;">Send via WhatsApp</button>
                     </a>
@@ -283,20 +283,15 @@
                 document.getElementById("guestNames").textContent = "Translation failed.";
             }
         }
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                const btn = event.target;
-                const originalText = btn.textContent;
-                btn.textContent = '✓ Copied!';
-                btn.style.background = '#4caf50';
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '';
-                }, 2000);
+        function copyToClipboard(type) {
+            navigator.clipboard.writeText(document.getElementById(type).textContent).then(() => {
+                alert('✓ Copied!');
             }).catch(err => {
+                console.error(err);
                 alert('Failed to copy. Please copy manually.');
             });
         }
+
     </script>
 </body>
 </html>
