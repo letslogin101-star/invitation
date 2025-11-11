@@ -168,7 +168,12 @@
             font-size: 16px;
             font-weight: 500;
         }
-
+        .page img {
+                background: url(https://dj-diu.github.io/invitation/assests/images/background.png);
+        }
+        .page {
+                background: url(https://dj-diu.github.io/invitation/assests/images/background.png);
+        }
         .placeholder-text {
             display: flex;
             align-items: center;
@@ -240,7 +245,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const event = urlParams.get('ev');
             if(event === "all") {
-              pageImages.splice(2, 0, "https://dj-diu.github.io/invitation/assests/images/eng-invite.jpg"); 
+              pageImages.splice(2, 0, "https://dj-diu.github.io/invitation/assests/images/eng-invite-final.jpg"); 
             }
         }
         getEngagementInviteStatus()
