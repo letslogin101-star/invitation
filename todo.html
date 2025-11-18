@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Redirecting...</title>
+
+<!-- Auto redirect after 2 seconds -->
+<meta http-equiv="refresh" content="2; URL=https://script.google.com/macros/s/AKfycbxKPXkwLJMKZOGPaCkDd7hmj0yNjPEGCMhqOCgMVZBxxm0clpZFrSfhB9Nb4h952xyM/exec">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 60px;
+  }
+  #fallback {
+    display: none;
+    margin-top: 30px;
+  }
+  button {
+    padding: 12px 22px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+// If redirect fails within 3 seconds, show manual button
+setTimeout(function() {
+  document.getElementById("fallback").style.display = "block";
+}, 3000);
+</script>
+
+</head>
+<body>
+
+<h2>Redirecting, please wait...</h2>
+
+<div id="fallback">
+  <p>If you are not redirected automatically, click below:</p>
+  <button onclick="window.location.href='https://script.google.com/macros/s/AKfycbxKPXkwLJMKZOGPaCkDd7hmj0yNjPEGCMhqOCgMVZBxxm0clpZFrSfhB9Nb4h952xyM/exec'">Go to Page</button>
+</div>
+
+</body>
+</html>
